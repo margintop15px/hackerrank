@@ -36,7 +36,7 @@
 
         (recur
          (flatten (mapv #(vector (.left %) (.right %))
-                        nodes))
+                        (filter some? nodes)))
          (inc current-level))))))
 
 
@@ -49,6 +49,6 @@
 
 
 (comment
- (get-level-values tree 4)
- (tree-view tree :left 5)
- (tree-view tree :right 5))
+ (get-level-values tree 5)
+ (tree-view tree :left 6)
+ (tree-view tree :right 6))
